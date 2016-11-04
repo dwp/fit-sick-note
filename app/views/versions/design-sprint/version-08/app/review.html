@@ -78,28 +78,8 @@
           </td>
         </tr>
         {% endif %}
-      </tbody>
-
-      {% if session.postCode == "" %}
-      {% else %}
-
-      <thead>
-        <tr>
-          <th colspan="2">
-            <h2 class="heading-medium">
-              Home address
-            </h2>
-          </th>
-
-          <th class="change-answer">
-            <a href="your-address">
-              Change <span class="visuallyhidden">personal details</span>
-            </a>
-          </th>
-        </tr>
-      </thead>
-
-      <tbody>
+        {% if session.postCode == "" %}
+        {% else %}
         <tr>
           <td>
             <b>Home address</b>
@@ -112,6 +92,8 @@
             {{session.postCode}}
           </td>
         </tr>
+        {% endif %}
+
       </tbody>
 
       {% endif %}
