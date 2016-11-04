@@ -22,7 +22,7 @@ var formatTitle = function(s) {
  * Redirect to index file
  */
 router.get('/', function (req, res) {
-  res.redirect('versions/design-sprint/version-07/app/index');
+  res.redirect('versions/design-sprint/version-08/app/index');
 });
 
 /**
@@ -116,19 +116,5 @@ router.all(prototypePaths.step, function(req,res,next){
   res.locals.prototype ? _.merge(res.locals.prototype, p) : res.locals.prototype = p;
   next();
 });
-
-// micro service routes
-router.get('/versions/:phase/:version/app/download', function (req, res) {
-
-   var declaration = req.query.declaration;
-
-   if (declaration == "Other"){
-     res.redirect('/versions/' + req.params.phase + '/' + req.params.version + '/app/original');
-   } else if (declaration == "General Practitioner" || "GMC registered consultant") {
-     res.render('versions/' + req.params.phase + '/' + req.params.version + '/app/download');
-   }
-
- });
-
 
 module.exports = router;

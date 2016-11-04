@@ -1,0 +1,74 @@
+{% set page = {
+  title: 'index',
+  dev: true,
+  secondary: true,
+  html_classes: ['page-class']
+} %}
+
+{% extends page.layout | d(prototype.current.layout) %}
+
+{% block primary %}
+  <h1 class="heading-large">
+    {{serviceName}}
+  </h1>
+
+  <p class="lede">
+    Use this service to send in a copy of your fit note for your Employment and Support Allowance claim.
+  </p>
+
+  <form action="{{ prototype.current.path }}/take-photo" method="post">
+
+  <div class="form-group">
+    <fieldset class="inline">
+      <legend class="heading-medium">
+        Is your fit note printed on one or both sides?
+      </legend>
+     <label class="block-label" for="radio-inline-1a">
+       <input id="radio-inline-1a" type="radio" name="radio-inline-group" value="Yes">
+        One side
+      </label>
+     <label class="block-label" for="radio-inline-2a" data-target="no">
+        <input id="radio-inline-2a" type="radio" name="radio-inline-group" value="No">
+        Both sides
+      </label>
+    </fieldset>
+  </div>
+
+  <!-- National Insurance number -->
+  <div class="form-group" data-required data-error="Enter your National Insurance number" >
+    <label class="form-label" for="niNumber">
+      National Insurance number
+      <!-- <span class="form-hint">
+        For example, 'VO 12 34 56 D'.
+      </span> -->
+    </label>
+    <input type="text" class="form-control" name="niNumber" id="niNumber" value="">
+  </div>
+
+  <!-- Mobile phone number -->
+  <div class="form-group">
+    <label class="form-label" for="mobileNumber">
+      Mobile number &ndash; if you want text reminders
+      <!-- <span class="form-hint">
+        If you want text reminders
+      </span> -->
+    </label>
+    <input type="text" class="form-control" name="mobileNumber" id="mobileNumber" value="">
+  </div>
+
+
+  <!-- <p>You'll need:</p>
+
+  <ul class="list list-bullet">
+    <li>your fit note</li>
+    <li>your National Insurance number</li>
+  </ul>
+ -->
+    <button type="submit" class="button">Continue</button>
+
+  </form>
+
+{% endblock %}
+
+{% block secondary %}
+{% endblock %}
