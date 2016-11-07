@@ -11,7 +11,7 @@
 
   {% include "../../../../includes/error-summary.html" %}
 
-  <h1 class="heading-xlarge">
+  <h1 class="heading-large">
     Check your answers
   </h1>
 
@@ -35,9 +35,20 @@
       </thead>
       <tbody>
         <tr>
+          {% if session.radio_inline_group == "Yes" %}
+          <td width="50%">
+            Front<br>
+            <img src="/public/dummy-image.jpg" alt="" />
+          </td>
+          <td width="50%" colspan="2">
+            Back<br>
+            <img src="/public/dummy-image.jpg" alt="" />
+          </td>
+          {% else %}
           <td colspan="3">
             <img width="50%" src="/public/dummy-image.jpg" alt="" />
           </td>
+          {% endif %}
         </tr>
       </tbody>
 
