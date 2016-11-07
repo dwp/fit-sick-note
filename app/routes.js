@@ -117,4 +117,14 @@ router.all(prototypePaths.step, function(req,res,next){
   next();
 });
 
+router.post('/versions/design-sprint/version-08/app/take-photo', function (req, res) {
+
+  if (req.body.doubleSided == "Yes"){
+    res.redirect("/versions/design-sprint/version-08/app/take-photo-double-front");
+  } else {
+    res.render('versions/design-sprint/version-08/app/take-photo');
+  }
+
+});
+
 module.exports = router;
