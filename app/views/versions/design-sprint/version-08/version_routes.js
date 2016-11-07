@@ -1,19 +1,22 @@
 module.exports = function(router, config) {
 
-  // routing for all pages directly below version/app/
   router.all(config.routes.step, function(req,res,next){
 
-    var requestedPage = req.body.radio_inline_group,
-        postData = req.body || {};
+    router.post('/versions/design-sprint/version-08/app/take-photo', function (req, res) {
 
-    // place version routing below this line:
-    if (requestedPage == 'Yes') {
-      res.redirect('take-photo-double-front');
-    }
+      if (req.body.radio_inline_group == "Yes"){
+        res.redirect("/versions/design-sprint/version-08/app/take-photo-double-front");
+      } else {
+        res.render('versions/design-sprint/version-08/app/take-photo');
+      }
+
+    });
 
     next();
 
   });
+
+
 
   return router;
 }
