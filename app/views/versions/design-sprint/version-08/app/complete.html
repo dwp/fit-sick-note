@@ -10,7 +10,7 @@
 {% block primary %}
   <div class="govuk-box-highlight">
     <h1 class="bold-xlarge">
-      <img src="/public/images/icon-tick-circle@2x.png" width="40" alt="" />Sent
+      <img src="/public/images/icon-tick-circle@2x.png" width="40" alt="" />Received
     </h1>
     <p></p>
   </div>
@@ -22,12 +22,12 @@
   {% if session.mobileNumber == "" %}
 
   <p>
-    Your fit note will be processed within 24 hours.
+    Your fit note (sick note) should be processed within 24 hours.
   </p>
 
-  <p>
-     If there's a problem you'll be contacted.
-  </p>
+<p>
+   You don't need to call us. If there's a problem, we'll contact you.
+</p>
 
   {% else %}
 
@@ -37,7 +37,7 @@
 
     <ul class="list list-bullet">
       <li>
-        tell you that your fit note's been processed
+        tell you that your fit note (sick note) has been processed
       </li>
       <li>
         remind you to send another if you're still not well
@@ -45,11 +45,11 @@
     </ul>
 
     <p>
-      Your fit note will be processed within 24 hours.
+      Your fit note (sick note) should be processed within 24 hours.
     </p>
 
   <p>
-     If there's a problem you'll be contacted.
+     You don't need to call us. If there's a problem, we'll contact you.
   </p>
 
   {% endif %}

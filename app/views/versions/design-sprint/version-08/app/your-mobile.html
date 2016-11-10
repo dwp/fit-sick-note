@@ -12,26 +12,27 @@
   {% include "../../../../includes/error-summary.html" %}
 
   <h1 class="heading-large">
-    <!-- Your details -->
+    Mobile number
   </h1>
+
+  <p>If you want text reminders</p>
 
   <form action="{{ prototype.current.path }}complete" method="post">
 
      <!-- Mobile phone number -->
      <div class="form-group">
-       <label class="heading-large" for="mobileNumber">
-         Mobile number &mdash; if you want text reminders
-         <!-- <span class="form-hint">
+       <label class="form-label-bold visuallyhidden" for="mobileNumber">
+         Mobile number
+         <span class="form-hint">
            If you want text reminders
-         </span> -->
+         </span>
        </label>
        <input type="text" class="form-control" name="mobileNumber" id="mobileNumber" value="">
      </div>
 
-
     <!-- Primary buttons, secondary links -->
     <div class="form-group">
-        <input type="submit" class="button" value="Continue">
+        <input type="submit" class="button" value="Send">
     </div>
 
   </form>
