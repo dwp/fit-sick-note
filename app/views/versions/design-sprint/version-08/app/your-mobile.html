@@ -1,0 +1,51 @@
+{% set page = {
+  title: 'index',
+  dev: true,
+  secondary: true,
+  html_classes: ['page-class']
+} %}
+
+{% extends page.layout | d(prototype.current.layout) %}
+
+{% block primary %}
+
+  {% include "../../../../includes/error-summary.html" %}
+
+  <h1 class="heading-large">
+    <!-- Your details -->
+  </h1>
+
+  <form action="{{ prototype.current.path }}complete" method="post">
+
+     <!-- Mobile phone number -->
+     <div class="form-group">
+       <label class="heading-large" for="mobileNumber">
+         Mobile number &mdash; if you want text reminders
+         <!-- <span class="form-hint">
+           If you want text reminders
+         </span> -->
+       </label>
+       <input type="text" class="form-control" name="mobileNumber" id="mobileNumber" value="">
+     </div>
+
+
+    <!-- Primary buttons, secondary links -->
+    <div class="form-group">
+        <input type="submit" class="button" value="Continue">
+    </div>
+
+  </form>
+
+
+{% endblock %}
+
+{% block secondary %}
+{% endblock %}
+
+{% block body_end %}
+
+  {{ super() }}
+
+  <script src="/public/javascripts/validate.js"></script>
+
+{% endblock %}

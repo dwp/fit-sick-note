@@ -12,7 +12,7 @@
 
 {% block primary %}
 
-<form action="{{ prototype.current.path }}your-address" method="post" enctype="multipart/form-data">
+<form action="{{ prototype.current.path }}please-wait-again" method="post" enctype="multipart/form-data">
 
   <div class="photo-guide">
 
@@ -140,9 +140,10 @@
         if($input.length) {
 
           $input.on('change',function(e){
-            self.showFile();
-            $previewImage.removeClass('visuallyhidden');
-            $previewBox.addClass('active');
+            $('form').submit();
+            // self.showFile();
+            // $previewImage.removeClass('visuallyhidden');
+            // $previewBox.addClass('active');
           });
 
           $fakeInput.on('click', function(e){
